@@ -180,7 +180,7 @@ SumStats.updated <- function(fun.myFile
       # QC.2.1. Flag field present in data
       myCol <- c(fun.myDateTime.Name, i, myParam.Name.Flag)
       # QC.2.1.1. Convert "Fails" to NA where appropriate
-      if (ContData.env$myStats.Fails.Exclude == TRUE) {##IF.Fails.START
+      if (ContData.env$myStats.Fails.Exclude == TRUE & ContData.env$myStats.Suspects.Exclude == FALSE) {##IF.Fails.START
         # find Fails
         myFails <- df.load[,myParam.Name.Flag]==ContData.env$myFlagVal.Fail
         myFails.Num <- sum(myFails)
@@ -190,9 +190,35 @@ SumStats.updated <- function(fun.myFile
         myMsg <- paste0("QC Flag field was found and "
                         , myFails.Num
                         , " fails were excluded based on user's config file.")
-      } else {
+      } else if (ContData.env$myStats.Fails.Exclude == FALSE & ContData.env$myStats.Suspects.Exclude == TRUE) {##IF.Fails.START
+        # find Suspects
+        mySuspects <- df.load[,myParam.Name.Flag]==ContData.env$myFlagVal.Suspect
+        mySuspects.Num <- sum(mySuspects)
+        # convert to NA
+        df.load[mySuspects, i] <- NA
         # Message to User
-        myMsg <- "QC Flag field was found and fails were all
+        myMsg <- paste0("QC Flag field was found and "
+                        , mySuspects.Num
+                        , " suspects were excluded based on user's config file.")
+      
+      }else if(ContData.env$myStats.Fails.Exclude == TRUE & ContData.env$myStats.Suspects.Exclude == TRUE){
+        myFails <- df.load[,myParam.Name.Flag]==ContData.env$myFlagVal.Fail
+        myFails.Num <- sum(myFails)
+        # convert to NA
+        df.load[myFails, i] <- NA
+        mySuspects <- df.load[,myParam.Name.Flag]==ContData.env$myFlagVal.Suspect
+        mySuspects.Num <- sum(mySuspects)
+        # convert to NA
+        df.load[mySuspects, i] <- NA
+        # Message to User
+        myMsg <- paste0("QC Flag field was found and "
+                        , myFails.Num
+                        , " fails and "
+                        , mySuspects.Num
+                        , " suspects were excluded based on user's config file.")
+      }else {
+        # Message to User
+        myMsg <- "QC Flag field was found and fails & suspects were all
 included based on user's config file."
       }##IF.Fails.END
       #

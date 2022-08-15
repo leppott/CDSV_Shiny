@@ -1,0 +1,27 @@
+{
+    "id": "6BE956D5",
+    "path": "C:/Users/yxu01/Documents/FY22_projects/CYANOHAB/Task_4_R_Shiny_for_RMNs/ContDataSumViz_Shiny/server.R",
+    "project_path": "server.R",
+    "type": "r_source",
+    "hash": "658354711",
+    "contents": "",
+    "dirty": false,
+    "created": 1657899231265.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "1070,4",
+        "scrollLine": "1052",
+        "ignored_words": "periodStats\n"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1659646935,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1659646935342,
+    "read_only": false,
+    "read_only_alternatives": []
+}

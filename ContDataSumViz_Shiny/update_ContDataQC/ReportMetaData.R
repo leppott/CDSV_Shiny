@@ -193,7 +193,8 @@ ReportMetaData <- function(fun.myFile
       df.toCheck.flag <- df.param.flag[,c(myDate.Name,myParam.Name.Flag)]
       # summarise the fail and suspect data points 
       df.summaryFlag <- df.toCheck.flag %>% group_by(Date) %>% summarise(sumFail=sum(!!rlang::sym(myParam.Name.Flag)==ContData.env$myFlagVal.Fail),
-                                                                         sumSuspect=sum(!!rlang::sym(myParam.Name.Flag)==ContData.env$myFlagVal.Suspect))
+                                                                         sumSuspect=sum(!!rlang::sym(myParam.Name.Flag)==ContData.env$myFlagVal.Suspect),
+                                                                         sumNoFlagData=sum(!!rlang::sym(myParam.Name.Flag)==ContData.env$myFlagVal.NoData))
     } else {
       # No Flag column
       df.summaryFlag <- data.frame()

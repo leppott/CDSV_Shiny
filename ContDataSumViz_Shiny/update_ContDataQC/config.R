@@ -708,6 +708,7 @@ ContData.env$myNames.Fields.TimePeriods <- c(ContData.env$myName.Yr
 # Exclude Trigger ####
 # Trigger for Stats to exclude (TRUE) or include (FALSE) where flag = "fail"
 ContData.env$myStats.Fails.Exclude <- TRUE  #FALSE #TRUE
+ContData.env$myStats.Suspects.Exclude <- FALSE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Report Format ####
 ContData.env$myReport.Format <- "docx" # "html" or "docx"
