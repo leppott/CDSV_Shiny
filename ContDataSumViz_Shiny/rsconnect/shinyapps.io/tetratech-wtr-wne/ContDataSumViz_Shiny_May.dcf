@@ -1,0 +1,13 @@
+name: ContDataSumViz_Shiny_May
+title: ContDataSumViz_Shiny_May
+username:
+account: tetratech-wtr-wne
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6788328
+bundleId: 6203810
+url: https://tetratech-wtr-wne.shinyapps.io/ContDataSumViz_Shiny_May/
+when: 1660591110.727
+lastSyncTime: 1660591110.72702
+asMultiple: FALSE
+asStatic: FALSE
