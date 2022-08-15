@@ -5,6 +5,14 @@ NEWS
 
     #> Last Update: 2022-08-15 15:49
 
+# CDSV_Shiny 0.2.1
+
+Released - 2022-08-04
+
+-   Revised for edit to remove all but the loading of the file
+
+    +   Use this version to compare to v0.1
+
 # CDSV_Shiny 0.2
 
 Released - 2022-08-04
